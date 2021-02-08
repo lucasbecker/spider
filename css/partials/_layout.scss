@@ -1,0 +1,113 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 36px 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-item-1 {
+  max-width: 576px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.spiderman {
+  width: 150%;
+  transform: translate3d(-170px, 0, 0);
+}
+
+.action{
+  margin-top: 24px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 3px;
+  transform: skewX(-10deg);
+  text-transform: uppercase;
+  background: linear-gradient(267.72deg, $red-light 0.88%, $red 100%);
+  position: relative;
+  transition: .7s ease;
+  margin-right: 12px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    display: block;
+    width: 30%;
+    height: 70%;
+    border-radius: 3px;
+    border-top: 3px solid $white;
+    border-left: 3px solid $white;
+    opacity: 0;
+    transition: .7s ease;
+
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    display: block;
+    width: 30%;
+    height: 70%;
+    border-radius: 3px;
+    border-bottom: 3px solid $white;
+    border-right: 3px solid $white;
+    opacity: 0;
+    transition: .7s ease;
+
+  }
+  &:hover {
+    transform: skewX(-10deg) scale(1.05);
+    &::after,
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 3px;
+  transform: skewX(-10deg);
+  text-transform: uppercase;
+  background: transparent;
+  position: relative;
+  border: 2px solid $red;
+  transition: .7s ease;
+
+  &::after{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(267.72deg, $red-light 0.88%, $red 100%);
+    z-index: -1;
+    transition: .7s ease;
+  }
+
+  &:hover{
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.credits {
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+}
